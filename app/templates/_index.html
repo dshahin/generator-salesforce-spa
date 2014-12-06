@@ -9,16 +9,21 @@
 	<div id="ready3"></div>
 	<script src="/static/bower_components/jquery/dist/jquery.js"></script>
 	
-	<script src="/static/js/dispatch.js"></script>
-	<script src="/static/js/mocks.js"></script>
-	<script src="/static/bower_components/jsr-mocks/dist/jsr-mocks.js"></script>
+	
 	<script>
 	var $config = {
 		jsr: {
 			myFunction :'{!$RemoteAction.ContactGraphCtrlExt.myFunction}'
 		}
+	}, 
+
+	$mocks ={
+		'{!$RemoteAction.ContactGraphCtrlExt.myFunction}' : {foo:'bar'}
 	}
+	//console.log($mocks);
 	</script>
 	<script src="/static/js/module.js"></script>
+	<script src="/static/bower_components/jsr-mocks/dist/jsr-mocks.js"></script>
+	
 	<script src="/static/js/main.js"></script>
 </html>

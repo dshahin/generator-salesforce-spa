@@ -1,5 +1,5 @@
 (function(global){
-	$config.mocks = {
+	global['$mocks'] = {
 		'{!$RemoteAction.ContactGraphCtrlExt.myFunction}' : {foo:'bar'}
 	};
 })(window)
