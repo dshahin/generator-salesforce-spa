@@ -1,6 +1,11 @@
 body{
 	font-family: sans-serif;
+	margin: 10px;
 }
 #ready{
 	background-color: pink;
+	
+}
+div.ready{
+	padding-bottom: 5px;
 }

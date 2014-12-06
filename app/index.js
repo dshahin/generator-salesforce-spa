@@ -51,7 +51,7 @@ module.exports = yeoman.generators.Base.extend({
             this.fs.copyTpl(
                 this.templatePath('_index.html'),
                 this.destinationPath('index.html'), {
-                    title: 'My local page'
+                    title: 'My local page that thinks it is a VF Page'
                 }
             );
             this.fs.copyTpl(

@@ -1,15 +1,31 @@
 $(document).ready(function(){
+
+	//this is where your app page logic lives
 	
 	Visualforce.remoting.Manager.invokeAction (
 		$config.jsr.myFunction,
-		'arg 1',
-		'arg 2',
+		'now I am ready',
 		function(result,event){
-	 	if(event.status){
-	 		$.myModule({backgroundColor:'lightgreen'});
-			$.myModule({backgroundColor:'lightblue',selector: '#ready2', message: 'still ready'});
-			$.myModule({backgroundColor:'lightyellow',selector: '#ready3', message: 'jsr mocks are go!'});
-	 	}
-	});
+			console.log('mock result:',result);
+		 	if(event.status){
+
+				$.myModule({backgroundColor:'lightgreen',selector: '#ready2', message: result.message });
+		 	}
+		}
+	);
+
+	Visualforce.remoting.Manager.invokeAction (
+		$config.jsr.myOtherFunction,
+		'and I am ready now too',
+		function(result,event){
+			console.log('mock result:',result);
+		 	if(event.status){
+
+				$.myModule({backgroundColor:'lightblue',selector: '#ready3', message: result.message});
+
+		 	}
+		}
+	);
+
 });
 	
