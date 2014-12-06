@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title><%= title %></title>
+		<link rel="stylesheet" href="/static/css/main.css" />
+	</head>
+	<h1><%= title %></h1>
+	<div id="ready"></div>
+	<div id="ready2"></div>
+	<div id="ready3"></div>
+	<script src="/static/bower_components/jquery/dist/jquery.js"></script>
+	<script src="/static/js/main.js"></script>
+	<script src="/static/js/dispatch.js"></script>
+	<script src="/static/js/VFMocks.js"></script>
+	<script>
+		$(document).ready(function(){
+			$.myModule({backgroundColor:'lightgreen'});
+			$.myModule({backgroundColor:'lightblue',selector: '#ready2', message: 'still ready'});
+			$.myModule({backgroundColor:'lightyellow',selector: '#ready3', message: 'you get the idea'});
+
+
+			Visualforce.remoting.Manager.invokeAction ('{!JSINHTMLENCODE($RemoteAction.ContactGraphCtrlExt.getNetworkGraph)}',
+				'arg 1',
+				'arg 2',
+				function(result,event){
+			 	if(event.status){
+			 		alert(result.foo);
+			 	}
+			});
+			
+		});
+	</script>
+</html>

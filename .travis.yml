@@ -1,0 +1,6 @@
+language: node_js
+node_js:
+  - '0.10'
+before_install:
+  - currentfolder=${PWD##*/}
+  - if [ "$currentfolder" != 'generator-salesforce-spa' ]; then cd .. && eval "mv $currentfolder generator-salesforce-spa" && cd generator-salesforce-spa; fi

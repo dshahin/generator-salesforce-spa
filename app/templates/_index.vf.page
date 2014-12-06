@@ -1,0 +1,8 @@
+<apex:page  doctype="HTML-5.0" title="<%= title %>" showHeader="false" sidebar="false" >
+	<apex:stylesheet value="{!URLFOR($Resource.ABMap, 'css/main.css')}"/>
+
+	<div id="ready"></div>
+
+	<script src="{!URLFOR($Resource.<%= staticName %>, 'bower_components/jquery/dist/jquery.js')}"></script>
+	<script src="{!URLFOR($Resource.<%= staticName %>, 'js/main.js')}"></script>
+</apex:page>
